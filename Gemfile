@@ -11,6 +11,7 @@ gem 'turbolinks'
 gem 'sprockets', '~> 3.0'
 gem 'jbuilder', '~> 2.0'
 gem 'simple_form'
+gem 'devise'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails_12factor', group: :production
 
