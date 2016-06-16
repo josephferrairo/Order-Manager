@@ -76,6 +76,7 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.7.0)
+    fabrication (2.15.2)
     ffi (1.9.10)
     font-awesome-sass (4.6.2)
       sass (>= 3.2)
@@ -259,6 +260,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.1.0)
   devise
+  fabrication
   font-awesome-sass (~> 4.3)
   guard-rspec
   jbuilder (~> 2.0)
