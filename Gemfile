@@ -14,6 +14,8 @@ gem 'simple_form'
 gem 'devise'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails_12factor', group: :production
+gem "wice_grid", '3.6.0.pre4'
+gem 'font-awesome-sass',  '~> 4.3'
 
 group :development, :test do
   gem 'byebug'
