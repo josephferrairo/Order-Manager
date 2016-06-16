@@ -40,6 +40,12 @@ class CustomersController < ApplicationController
       render :edit, :status => :unprocessable_entity
     end
   end
+
+  def destroy
+    @customer = Customer.find(params[:id])
+    @customer.destroy
+    redirect_to customers_path
+  end
   private
 
   def customer_params
