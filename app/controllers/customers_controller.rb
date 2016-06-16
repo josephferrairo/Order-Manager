@@ -1,8 +1,9 @@
 class CustomersController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-  
+
   def index
     @customer = Customer.all
+    @customers_grid = initialize_grid(Customer)
   end
   def new
     @customer = Customer.new
@@ -19,6 +20,7 @@ class CustomersController < ApplicationController
 
   def show
     @customer = Customer.find(params[:id])
+    @customers_grid = initialize_grid(Customer.where(active: true))
   end
 
   private
