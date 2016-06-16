@@ -23,6 +23,9 @@
     g.column do |customer|
       customer.zipcode
     end
+    g.column do |customer|
+      link_to('Modify', edit_customer_path(customer))
+    end
 
   end %>
 

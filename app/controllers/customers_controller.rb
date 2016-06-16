@@ -5,6 +5,7 @@ class CustomersController < ApplicationController
     @customer = Customer.all
     @customers_grid = initialize_grid(Customer)
   end
+
   def new
     @customer = Customer.new
   end
@@ -23,6 +24,9 @@ class CustomersController < ApplicationController
     @customer_grid = initialize_grid(Customer)
   end
 
+  def edit
+    @customer = Customer.find(params[:id])
+  end
   private
 
   def customer_params
