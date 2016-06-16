@@ -12,7 +12,7 @@ class CustomersController < ApplicationController
   def create
     @customer = current_user.customers.create(customer_params)
     if @customer.valid?
-      redirect_to root_path
+      redirect_to customers_path
     else
       render :new, :status => :unprocessable_entity
     end
@@ -20,7 +20,7 @@ class CustomersController < ApplicationController
 
   def show
     @customer = Customer.find(params[:id])
-    @customers_grid = initialize_grid(Customer.where(active: true))
+    @customer_grid = initialize_grid(Customer)
   end
 
   private
