@@ -3,7 +3,10 @@ class CustomersController < ApplicationController
 
   def index
     @customer = Customer.all
-    @customers_grid = initialize_grid(Customer)
+    @customers_grid = initialize_grid(Customer,
+    order: 'customers.id',
+    order_direction: 'asc'
+    )
   end
 
   def new
