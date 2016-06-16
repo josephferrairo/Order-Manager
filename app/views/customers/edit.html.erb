@@ -2,7 +2,7 @@
 <div class="booyah-box col-xs-10 col-xs-offset-1">
   <h1>Edit Customer Info</h1>
   <br  />
-  <%= simple_form_for @customer, url: customers_path do |f| %>
+  <%= simple_form_for @customer do |f| %>
   <%= f.input :name, label: 'Name' %>
   <%= f.input :customercode, label: 'Customer Code'  %>
   <%= f.input :address %>

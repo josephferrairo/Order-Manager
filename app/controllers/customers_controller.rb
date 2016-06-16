@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!
 
   def index
     @customer = Customer.all
@@ -26,6 +26,16 @@ class CustomersController < ApplicationController
 
   def edit
     @customer = Customer.find(params[:id])
+  end
+
+  def update
+    @customer = Customer.find(params[:id])
+    @customer.update_attributes(customer_params)
+    if @customer.valid?
+      redirect_to customers_path
+    else
+      render :edit, :status => :unprocessable_entity
+    end
   end
   private
 
