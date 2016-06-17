@@ -37,5 +37,19 @@ RSpec.describe CustomersController, :type => :controller do
     end
   end
 
+  describe "Put #update" do
 
-end
+    context "successful update" do
+      let(:abc) { Fabricate(:customer, name: "ABC")}
+        login_admin
+        it "updates the modified customer object" do
+          put :update, customer: Fabricate.attributes_for(:customer, name: "XYZ"), id: abc.id
+
+          expect(Customer.last.name).to eq("XYZ")
+          expect(Customer.last.name).not_to eq("ABC")
+        end
+      end
+    end
+
+
+  end

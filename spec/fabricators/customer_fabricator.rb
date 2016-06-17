@@ -4,6 +4,6 @@ Fabricator(:customer) do
   address       { Faker::Address.street_address }
   city          { Faker::Address.city_suffix }
   state         { Faker::Address.state_abbr }
-  zipcode       { Faker::Address.zip_code }
+  zipcode       { Faker::Number.number(5) }
 
 end
