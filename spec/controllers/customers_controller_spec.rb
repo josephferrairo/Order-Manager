@@ -20,6 +20,7 @@ RSpec.describe CustomersController, :type => :controller do
 
   describe "get #new" do
     it "returns a successful http request status code" do
+      sign_in
       get :new
       expect(response).to have_http_status(:success)
     end
