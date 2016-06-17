@@ -41,15 +41,33 @@ RSpec.describe CustomersController, :type => :controller do
 
     context "successful update" do
       let(:abc) { Fabricate(:customer, name: "ABC")}
-        login_admin
-        it "updates the modified customer object" do
-          put :update, customer: Fabricate.attributes_for(:customer, name: "XYZ"), id: abc.id
+      login_admin
+      it "updates the modified customer object" do
+        put :update, customer: Fabricate.attributes_for(:customer, name: "XYZ"), id: abc.id
 
-          expect(Customer.last.name).to eq("XYZ")
-          expect(Customer.last.name).not_to eq("ABC")
-        end
+        expect(Customer.last.name).to eq("XYZ")
+        expect(Customer.last.name).not_to eq("ABC")
       end
     end
-
-
   end
+
+  describe "GET #edit" do
+    let(:customer) { Fabricate(:customer) }
+    login_admin
+    it "sends a successful edit request" do
+      get :edit, id: customer
+
+      expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe "delete #destroy" do
+    let(:customer) { Fabricate(:customer)}
+    login_admin
+    it "deletes the customer with the given id" do
+      delete :destroy, id: customer.id
+
+      expect(Customer.count).to eq(0)
+    end
+  end
+end
