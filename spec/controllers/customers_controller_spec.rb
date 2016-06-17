@@ -19,10 +19,21 @@ RSpec.describe CustomersController, :type => :controller do
   end
 
   describe "get #new" do
+    login_admin
     it "returns a successful http request status code" do
-      sign_in
       get :new
       expect(response).to have_http_status(:success)
+    end
+  end
+
+  describe "POST #create" do
+    login_admin
+    context "a successful create" do
+      it "saves the new customer object" do
+
+        post :create, customer: Fabricate.attributes_for(:customer)
+        expect(Customer.count).to eq(1)
+      end
     end
   end
 
