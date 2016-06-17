@@ -3,7 +3,7 @@
   <h1>Add a New Customer</h1>
   <br  />
   <%= simple_form_for @customer, url: customers_path do |f| %>
-  <%= f.input :name, label: 'Name' %>
+  <%= f.input :name, label: "Name" %>
   <%= f.input :customercode, label: 'Customer Code'  %>
   <%= f.input :address %>
   <%= f.input :city %>

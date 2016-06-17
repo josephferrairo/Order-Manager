@@ -15,7 +15,8 @@ class CustomersController < ApplicationController
 
   def create
     @customer = current_user.customers.create(customer_params)
-    if @customer.valid?
+    if @customer.save
+      flash[:success] = 'Customer has been created!'
       redirect_to customers_path
     else
       render :new, :status => :unprocessable_entity

@@ -21,18 +21,19 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.4'
   gem 'fabrication'
+  gem 'spring-commands-rspec'
+  gem 'guard-rspec', require:false
 end
 
 group :test do
   gem 'shoulda-matchers', require: false
-  gem 'capybara'
+  gem 'capybara', '2.4.4'
   gem 'faker'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'guard-rspec', require:false
   gem 'better_errors'
   gem 'binding_of_caller'
 end
