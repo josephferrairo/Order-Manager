@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.feature "creating customer" do
-
   scenario "with valid inputs succeeds" do
-    login_admin
+    user = Fabricate(:user)
+    login_as(user, :scope => :user)
     visit root_path
     click_link "New Customer"
     fill_in "Name", with: "Business ABC"
