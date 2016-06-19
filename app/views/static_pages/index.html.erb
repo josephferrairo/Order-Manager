@@ -1,1 +1,32 @@
-<h1>Hello!</h1>
+<br />
+<div class="booyah-box col-xs-10 col-xs-offset-1">
+  <%= grid(@customers_grid, show_filters: :always) do |g|
+
+    g.column name: 'ID' do |customer|
+      customer.id
+    end
+    g.column  name: 'Company Name' do |customer|
+      customer.name
+    end
+    g.column name: 'Code' do |customer|
+      customer.customercode
+    end
+    g.column  name: 'Address' do |customer|
+      customer.address
+    end
+    g.column name: 'City' do |customer|
+      customer.city
+    end
+    g.column name: 'State' do |customer|
+      customer.state
+    end
+    g.column name: 'Zip' do |customer|
+      customer.zipcode
+    end
+    g.column name: 'Edit?' do |customer|
+      link_to('Modify', edit_customer_path(customer))
+    end
+
+  end %>
+
+</div>
