@@ -4,5 +4,8 @@ class StaticPagesController < ApplicationController
     order: 'customers.id',
     order_direction: 'asc'
     )
+    @work_instructions_grid = initialize_grid(WorkInstruction,
+    order: 'work_instructions.workcode',
+    order_direction: 'asc')
   end
 end
