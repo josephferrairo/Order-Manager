@@ -47,6 +47,7 @@ class CustomersController < ApplicationController
     @customer.destroy
     redirect_to customers_path
   end
+  
   private
 
   def customer_params
