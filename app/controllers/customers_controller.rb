@@ -25,7 +25,6 @@ class CustomersController < ApplicationController
 
   def show
     @customer = Customer.find(params[:id])
-    @customer_grid = initialize_grid(Customer)
   end
 
   def edit
@@ -47,7 +46,7 @@ class CustomersController < ApplicationController
     @customer.destroy
     redirect_to customers_path
   end
-  
+
   private
 
   def customer_params

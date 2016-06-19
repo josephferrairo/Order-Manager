@@ -19,8 +19,32 @@ class WorkInstructionsController < ApplicationController
       flash[:success] = 'New instructions have been created!'
       redirect_to work_instructions_path
     else
-      render :new, :status => unprocessable_entity
+      render :new, :status => :unprocessable_entity
     end
+  end
+
+  def show
+    @work_instruction = WorkInstruction.find(params[:id])
+  end
+
+  def edit
+    @work_instruction = WorkInstruction.find(params[:id])
+  end
+
+  def update
+    @work_instruction = WorkInstruction.find(params[:id])
+    @work_instruction.update_attributes(work_instruction_params)
+    if @work_instruction.valid?
+      redirect_to work_instructions_path
+    else
+      render :edit, :status => :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @work_instruction = WorkInstruction.find(params[:id])
+    @work_instruction.destroy
+    redirect_to work_instructions_path
   end
 
   private

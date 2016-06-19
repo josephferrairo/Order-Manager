@@ -12,9 +12,9 @@
       work_instruction.description
     end
 
-#    name: 'Edit?' do |work_instruction|
-      #    link_to('Modify', edit_work_instruction_path(customer))
-  #  end
+    g.column name: 'Edit?' do |work_instruction|
+          link_to('Modify', edit_work_instruction_path(work_instruction))
+    end
 
   end %>
 
