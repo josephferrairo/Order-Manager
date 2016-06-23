@@ -15,6 +15,6 @@ RSpec.feature "creating customer" do
 
     click_button "Submit"
 
-    expect(page).not_to have_content('Customer has been created!')
+    expect(page).to have_content 'Customer has been created!'
   end
 end
