@@ -1,0 +1,2 @@
+Fabricator(:procedure) do
+end
