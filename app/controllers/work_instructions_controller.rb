@@ -17,7 +17,7 @@ class WorkInstructionsController < ApplicationController
     @work_instruction = current_user.work_instructions.create(work_instruction_params)
     if @work_instruction.save
       flash[:success] = 'New instructions have been created!'
-      redirect_to work_instructions_path
+      redirect_to root_path
     else
       render :new, :status => :unprocessable_entity
     end

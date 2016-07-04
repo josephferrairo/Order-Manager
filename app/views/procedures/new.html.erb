@@ -5,7 +5,9 @@
   <%= simple_form_for @procedure, url: procedures_path do |f| %>
   <%= f.input :name, label: "Name" %>
   <%= f.input :code, label: "Code" %>
-  <%= f.collection_select :work_instructions, @work_instructions, :id, :name, :prompt => "Select a work_instruction" %>
+  <%= f.collection_check_boxes :work_instruction_ids, @work_instructions, :id, :name, :prompt => "Select a work instruction", input_html: { multiple: true}, :value_method => :to_sym %>
+    <%= f.collection_select :work_instruction_ids, @work_instructions, :id, :name, :prompt => "Select a work instruction", input_html: { multiple: true}, :value_method => :to_sym %>
+
 
 <br />
   <br />
